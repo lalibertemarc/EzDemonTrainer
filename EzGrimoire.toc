@@ -1,0 +1,15 @@
+## Interface: 16001, 11509
+## Title: EzGrimoire
+## Notes: What each of your demons has learned, which grimoire to buy next, and at what level.
+## Author: Marc
+## Version: @project-version@
+## Category: Class
+## IconTexture: Interface\Icons\INV_Misc_Book_06
+## SavedVariables: EzGrimoireDB
+## SavedVariablesPerCharacter: EzGrimoireCharDB
+## AddonCompartmentFunc: EzGrimoire_OnAddonCompartmentClick
+
+Data.lua
+Logic.lua
+Core.lua
+UI.lua

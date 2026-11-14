@@ -1,0 +1,11 @@
+package-as: EzGrimoire
+
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown
+
+ignore:
+  - README.md
+  - .luacheckrc
+  - tests
+  - .githooks

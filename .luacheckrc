@@ -4,14 +4,15 @@ self = false
 exclude_files = { ".release/", "tests/" }
 
 globals = {
-    "EzGrimoireDB",
-    "EzGrimoireCharDB",
-    "EzGrimoire_Toggle",
-    "EzGrimoire_OnAddonCompartmentClick",
-    "BINDING_HEADER_EZGRIMOIRE",
-    "BINDING_NAME_EZGRIMOIRE_TOGGLE",
-    "SLASH_EZGRIMOIRE1",
-    "SLASH_EZGRIMOIRE2",
+    "EzDemonTrainerDB",
+    "EzDemonTrainerCharDB",
+    "EzDemonTrainer_Toggle",
+    "EzDemonTrainer_OnAddonCompartmentClick",
+    "BINDING_HEADER_EZDEMONTRAINER",
+    "BINDING_NAME_EZDEMONTRAINER_TOGGLE",
+    "SLASH_EZDEMONTRAINER1",
+    "SLASH_EZDEMONTRAINER2",
+    "SLASH_EZDEMONTRAINER3",
     "SlashCmdList",
     "UISpecialFrames",
 }

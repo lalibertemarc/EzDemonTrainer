@@ -204,7 +204,7 @@ end
 
 local function Window()
     if window then return window end
-    window = CreateFrame("Frame", "EzGrimoireFrame", UIParent, "BackdropTemplate")
+    window = CreateFrame("Frame", "EzDemonTrainerFrame", UIParent, "BackdropTemplate")
     window:SetSize(W, H)
     window:SetFrameStrata("HIGH")
     window:EnableMouse(true)
@@ -218,7 +218,7 @@ local function Window()
     end)
     Skin(window)
     window:Hide()
-    tinsert(UISpecialFrames, "EzGrimoireFrame") -- Escape closes it
+    tinsert(UISpecialFrames, "EzDemonTrainerFrame") -- Escape closes it
     ns.PlaceWindow()
 
     local title = Text(window, "GameFontNormal")

@@ -1,4 +1,4 @@
--- Plain Lua 5.1 checks for EzGrimoire: the data, the rules (Logic.lua), then the whole addon on a stubbed game
+-- Plain Lua 5.1 checks for EzDemonTrainer: the data, the rules (Logic.lua), then the whole addon on a stubbed game
 -- API (pet read, window, trainer tags, tooltips, level-up note, slash). lua tests/grimoire.lua (in the addon folder).
 local checks, failed = 0, 0
 local function check(ok, what)
@@ -16,7 +16,7 @@ local build = 16001
 _G.GetBuildInfo = function() return "1.60.1", "0", "", build end
 local function Load(files)
     local ns = {}
-    for _, file in ipairs(files) do assert(loadfile(file))("EzGrimoire", ns) end
+    for _, file in ipairs(files) do assert(loadfile(file))("EzDemonTrainer", ns) end
     return ns
 end
 
@@ -204,16 +204,16 @@ petOut, petSpells = true, { [3716] = true, [7809] = true, [7812] = true }
 OnEvent(events, "UNIT_PET", "player")
 RunTimers()
 eq(ns.current, "voidwalker", "voidwalker read")
-eq(EzGrimoireCharDB.demons.voidwalker.ranks.torment, 2, "saved torment rank")
+eq(EzDemonTrainerCharDB.demons.voidwalker.ranks.torment, 2, "saved torment rank")
 
 -- Window
-SlashCmdList.EZGRIMOIRE("")
-local window = _G.EzGrimoireFrame
+SlashCmdList.EZDEMONTRAINER("")
+local window = _G.EzDemonTrainerFrame
 check(window and window:IsShown(), "slash opens the window")
-SlashCmdList.EZGRIMOIRE("imp")
-SlashCmdList.EZGRIMOIRE("felhunter")
-SlashCmdList.EZGRIMOIRE("incubus")
-SlashCmdList.EZGRIMOIRE("void")
+SlashCmdList.EZDEMONTRAINER("imp")
+SlashCmdList.EZDEMONTRAINER("felhunter")
+SlashCmdList.EZDEMONTRAINER("incubus")
+SlashCmdList.EZDEMONTRAINER("void")
 
 -- Trainer: window beside it, tags on the grimoires.
 OnEvent(events, "MERCHANT_SHOW")
@@ -270,18 +270,18 @@ petOut = false
 OnEvent(events, "UNIT_PET", "player")
 RunTimers()
 eq(ns.current, nil, "no pet")
-SlashCmdList.EZGRIMOIRE("trainer off")
-eq(EzGrimoireDB.atTrainer, false, "trainer off")
-SlashCmdList.EZGRIMOIRE("forget voidwalker")
-eq(EzGrimoireCharDB.demons.voidwalker, nil, "forgot voidwalker")
-SlashCmdList.EZGRIMOIRE("forget all")
-SlashCmdList.EZGRIMOIRE("reset")
-SlashCmdList.EZGRIMOIRE("help")
-_G.EzGrimoire_Toggle()
+SlashCmdList.EZDEMONTRAINER("trainer off")
+eq(EzDemonTrainerDB.atTrainer, false, "trainer off")
+SlashCmdList.EZDEMONTRAINER("forget voidwalker")
+eq(EzDemonTrainerCharDB.demons.voidwalker, nil, "forgot voidwalker")
+SlashCmdList.EZDEMONTRAINER("forget all")
+SlashCmdList.EZDEMONTRAINER("reset")
+SlashCmdList.EZDEMONTRAINER("help")
+_G.EzDemonTrainer_Toggle()
 
 -- Era client: no Incubus tab; another class stands down.
 build, class = 11509, "PRIEST"
-EzGrimoireDB, EzGrimoireCharDB = nil, nil
+EzDemonTrainerDB, EzDemonTrainerCharDB = nil, nil
 frames = {}
 local era = Load({ "Data.lua", "Logic.lua", "Core.lua", "UI.lua" })
 check(era.ERA, "era flag")

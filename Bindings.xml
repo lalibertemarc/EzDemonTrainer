@@ -1,5 +1,5 @@
 <Bindings>
-	<Binding name="EZGRIMOIRE_TOGGLE" category="EzGrimoire">
-		EzGrimoire_Toggle()
+	<Binding name="EZDEMONTRAINER_TOGGLE" category="EzDemonTrainer">
+		EzDemonTrainer_Toggle()
 	</Binding>
 </Bindings>

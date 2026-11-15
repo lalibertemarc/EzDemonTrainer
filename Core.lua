@@ -6,7 +6,7 @@ local addonName, ns = ...
 
 local PET_BANK = (Enum and Enum.SpellBookSpellBank and Enum.SpellBookSpellBank.Pet) or 1
 local PLAYER_BANK = (Enum and Enum.SpellBookSpellBank and Enum.SpellBookSpellBank.Player) or 0
-local TAG = "|cff9482c9EzGrimoire|r: "
+local TAG = "|cff9482c9EzDemonTrainer|r: "
 
 local function Print(msg)
     (DEFAULT_CHAT_FRAME or ChatFrame1):AddMessage(TAG .. msg)
@@ -402,21 +402,22 @@ local function Slash(msg)
     end
 end
 
-BINDING_HEADER_EZGRIMOIRE = "EzGrimoire"
-BINDING_NAME_EZGRIMOIRE_TOGGLE = "Show/hide the demon grimoire list"
+BINDING_HEADER_EZDEMONTRAINER = "EzDemonTrainer"
+BINDING_NAME_EZDEMONTRAINER_TOGGLE = "Show/hide the demon grimoire list"
 
-function EzGrimoire_Toggle()
+function EzDemonTrainer_Toggle()
     if ns.off then return Print("only for warlocks.") end
     ns.Toggle()
 end
 
-function EzGrimoire_OnAddonCompartmentClick()
-    EzGrimoire_Toggle()
+function EzDemonTrainer_OnAddonCompartmentClick()
+    EzDemonTrainer_Toggle()
 end
 
-SLASH_EZGRIMOIRE1 = "/grimoire"
-SLASH_EZGRIMOIRE2 = "/ezgrimoire"
-SlashCmdList.EZGRIMOIRE = Slash
+SLASH_EZDEMONTRAINER1 = "/grimoire"
+SLASH_EZDEMONTRAINER2 = "/demontrainer"
+SLASH_EZDEMONTRAINER3 = "/ezdemontrainer"
+SlashCmdList.EZDEMONTRAINER = Slash
 
 ---------------------------------------------------------------------------
 -- Events
@@ -425,9 +426,9 @@ local f = CreateFrame("Frame")
 f:RegisterEvent("PLAYER_LOGIN")
 f:SetScript("OnEvent", function(_, event, arg1)
     if event == "PLAYER_LOGIN" then
-        EzGrimoireDB = EzGrimoireDB or {}
-        EzGrimoireCharDB = EzGrimoireCharDB or {}
-        ns.db, ns.char = EzGrimoireDB, EzGrimoireCharDB
+        EzDemonTrainerDB = EzDemonTrainerDB or {}
+        EzDemonTrainerCharDB = EzDemonTrainerCharDB or {}
+        ns.db, ns.char = EzDemonTrainerDB, EzDemonTrainerCharDB
         ns.char.demons = ns.char.demons or {}
         local _, class = UnitClass("player")
         if class ~= "WARLOCK" then

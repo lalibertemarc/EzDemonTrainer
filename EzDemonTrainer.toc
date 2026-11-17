@@ -8,6 +8,7 @@
 ## SavedVariables: EzDemonTrainerDB
 ## SavedVariablesPerCharacter: EzDemonTrainerCharDB
 ## AddonCompartmentFunc: EzDemonTrainer_OnAddonCompartmentClick
+## X-Curse-Project-ID: 1812300
 
 Data.lua
 Logic.lua
